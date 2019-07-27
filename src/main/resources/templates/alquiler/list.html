@@ -1,0 +1,128 @@
+<div th:fragment="content" id="content">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/js/select2.min.js"></script>
+    <script src="http://momentjs.com/downloads/moment.min.js"></script>
+
+    <div class="container-fluid">
+        <div class="card shadow mb-4 mt-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Alquileres</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="alquileresTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Id Socio</th>
+                            <th>Socio</th>
+                            <th>Id Pelicula</th>
+                            <th>Pelicula</th>
+                            <th>F. Inicio</th>
+                            <th>F. Fin</th>
+                            <th>Valor</th>
+                            <th>F. Entrega</th>
+                        </tr>
+                        </thead>
+
+                        <tfoot>
+                        <tr>
+                            <th>Id</th>
+                            <th>Id Socio</th>
+                            <th>Socio</th>
+                            <th>Id Pelicula</th>
+                            <th>Pelicula</th>
+                            <th>F. Inicio</th>
+                            <th>F. Fin</th>
+                            <th>Valor</th>
+                            <th>F. Entrega</th>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <link th:href="@{/css/alquiler.css}" rel="stylesheet" type="text/css">
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Nuevo Alquiler</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputCedula">Cedula</label>
+                                <input type="text" class="form-control" id="inputCedula" minlength=10 maxlength="10">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="inputNombre">Nombre</label>
+                                <input type="text" class="form-control" id="inputNombre">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputDireccion">Dirección</label>
+                            <input type="text" class="form-control" id="inputDireccion">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="inputTelefono">Telefono</label>
+                                <input type="text" class="form-control" id="inputTelefono">
+                            </div>
+
+                            <div class="form-group col-md-6">
+                                <label for="inputCorreo">Correo</label>
+                                <input type="email" class="form-control" id="inputCorreo">
+                            </div>
+                        </div>
+
+
+                        <span id="prefix"></span>
+
+
+                        <table class="inventory">
+                            <thead>
+                            <tr>
+                                <th><span>Pelicula</span></th>
+                                <th><span>Costo</span></th>
+                                <th><span>Fecha Fin</span></th>
+                                <th><span>Valor</span></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            </tbody>
+                        </table>
+                        <a class="add">+</a>
+                        <table class="balance">
+                            <tr>
+                                <th><span>Total</span></th>
+                                <td><span data-prefix>$</span><span>0</span></td>
+                            </tr>
+                        </table>
+                        <br>
+                        <br>
+                        <br>
+                    </form>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="button" id="btnRegistrar" class="btn btn-primary">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script th:src="@{/js/crud/alquilerCrud.js}"></script>
+    <script th:src="@{/js/alquiler.js}"></script>
+    <!-- /.container-fluid -->
+</div>
+<!-- End of Main Content -->
